@@ -1,59 +1,69 @@
-# Devpulse
+# DevPulse
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+DevPulse is a learning project built while following a Udemy course. The app is being developed with Angular 21 and Tailwind CSS, with room to integrate Google Firebase services as the project grows.
 
-## Development server
+## Tech Stack
 
-To start a local development server, run:
+- Angular 21
+- TypeScript
+- Tailwind CSS 4
+- PostCSS
+- Firebase / Google services planned as part of the learning project
 
-```bash
-ng serve
-```
+## Project Status
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This repository is currently in an early setup stage. Angular and Tailwind are configured, and the project is ready to be expanded with features from the course.
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+- Node.js
+- npm
+- Angular CLI
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Install dependencies
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Start the development server
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Then open `http://localhost:4200/` in your browser.
 
-For end-to-end (e2e) testing, run:
+## Available Scripts
 
-```bash
-ng e2e
-```
+### `npm start`
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Runs the Angular development server.
 
-## Additional Resources
+### `npm run build`
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Builds the app for production.
+
+### `npm run watch`
+
+Builds the app in watch mode using the development configuration.
+
+### `npm test`
+
+Runs unit tests.
+
+## Styling
+
+Tailwind CSS is configured through PostCSS and imported globally in [`src/styles.css`](/Users/alexc/Programming/angular/devpulse/src/styles.css).
+
+## Notes
+
+- This project is part of a personal learning workflow.
+- The implementation will likely evolve as more course sections are completed.
+- Firebase-related setup may be added later depending on the course progress.
+
+## Generated With
+
+This project was generated with Angular CLI `21.2.3`.
