@@ -1,59 +1,86 @@
-# Devpulse
+# Devpulse (Learning Portfolio)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+An Angular-based frontend application for managing pulses, developed as part of my professional development through the [Angular Real World Guide - Build Angular & Firebase Apps](https://www.udemy.com/course/angular-and-google-firebase-frontend-development/) course by Sameer Saini.
 
-## Development server
+## 🌟 Purpose
 
-To start a local development server, run:
+This project serves as a practical implementation of modern frontend development principles using the Angular ecosystem and Google Firebase. It highlights the integration of Angular 21, Tailwind CSS, and Firebase to build a robust, scalable user experience.
 
-```bash
-ng serve
-```
+## 🚀 Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Post Creation:** Comprehensive feature set for creating and managing posts.
+- **Component-Based Architecture:** Modular design with core, feature, and shared layers.
+- **Responsive UI:** Styled with Tailwind CSS for a modern, mobile-first experience.
+- **Unit Testing:** Integrated testing using the Vitest runner.
+- **Firebase Integration:** Seamless connectivity with Firebase for backend services.
 
-## Code scaffolding
+## 🛠️ Technologies Used
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 21.x**
+- **TypeScript**
+- **Tailwind CSS 4.x** (Modern utility-first CSS)
+- **Vitest** (Fast unit testing runner)
+- **Firebase** (Backend-as-a-Service)
 
-```bash
-ng generate component component-name
-```
+## 📋 Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18.x or higher)
+- [npm](https://www.npmjs.com/) (latest stable version)
+- [Angular CLI](https://angular.dev/tools/cli)
 
-```bash
-ng generate --help
-```
+## ⚙️ Configuration
 
-## Building
+1. **Firebase Setup:**
+   Create a new project in the [Firebase Console](https://console.firebase.google.com/) and add a Web App to get your configuration.
 
-To build the project run:
+2. **Application Properties:**
+   Update your Firebase configuration in the appropriate environment or configuration file (e.g., `src/app/app.config.ts` or `src/environments/environment.ts`):
+   ```typescript
+   export const firebaseConfig = {
+     apiKey: "YOUR_API_KEY",
+     authDomain: "YOUR_AUTH_DOMAIN",
+     projectId: "YOUR_PROJECT_ID",
+     storageBucket: "YOUR_STORAGE_BUCKET",
+     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+     appId: "YOUR_APP_ID"
+   };
+   ```
 
-```bash
-ng build
-```
+## 🚀 Getting Started
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd devpulse
+   ```
 
-## Running unit tests
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
 
-```bash
-ng test
-```
+The application will be available at `http://localhost:4200`.
 
-## Running end-to-end tests
+## 📂 Project Structure
 
-For end-to-end (e2e) testing, run:
+- `src/app`: Main application code.
+  - `core`: Singleton components like the navbar.
+  - `features`: Business logic for specific features (e.g., posts).
+  - `shared`: Reusable components, pipes, and directives.
+  - `app.routes.ts`: Application routing configuration.
+  - `app.config.ts`: Main application configuration and providers.
+- `public`: Static assets and the application entry point.
+- `src/styles.css`: Global styles including Tailwind CSS directives.
 
-```bash
-ng e2e
-```
+## 📖 Credits & Acknowledgements
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Course:** [Angular & Google Firebase: Frontend Development](https://www.udemy.com/course/angular-and-google-firebase-frontend-development/)
+- **Instructor:** [Sameer Saini](https://www.udemy.com/user/sameersaini/)
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This repository is for educational purposes, documenting my progress and implementation of the course curriculum.
