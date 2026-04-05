@@ -80,7 +80,7 @@ The application will be available at `http://localhost:4200`.
 
 ## 📖 Credits & Acknowledgements
 
-- **Course:** [Angular & Google Firebase: Frontend Development](https://www.udemy.com/course/angular-and-google-firebase-frontend-development/)
+- **Course:** [Angular Real World Guide - Build Angular & Firebase Apps](https://www.udemy.com/course/angular-and-google-firebase-frontend-development/)
 - **Instructor:** [Sameer Saini](https://www.udemy.com/user/sameersaini/)
 
 This repository is for educational purposes, documenting my progress and implementation of the course curriculum.
