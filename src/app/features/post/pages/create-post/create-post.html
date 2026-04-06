@@ -40,12 +40,20 @@
           <p class="text-red-500 text-bold mt-2 mb-2">Content must not exceed 3000 characters</p>
         }
       }
-      <textarea
-        id="content"
-        class="bg-neutral-100 w-full px-4 py-2 mt-2 mb-2 h-50"
-        placeholder="Enter blog post content..."
-        formControlName="content"
-      ></textarea>
+      <div class="flex gap-4">
+        <textarea
+          id="content"
+          class="bg-neutral-100 w-full px-4 py-2 mt-2 mb-2 h-50"
+          placeholder="Enter blog post content..."
+          formControlName="content"
+          (keyup)="onChangeContent()"
+        ></textarea>
+
+        <div class="bg-neutral-50 w-full px-4 py-2 mt-2 mb-2 h-50 prose">
+          <markdown [data]="contentData()"></markdown>
+        </div>
+      </div>
+
     </div>
     <button
       type=submit
