@@ -9,7 +9,7 @@ export class BlogpostService {
   firestore = inject(Firestore);
 
 
-  createBlogPost(title: string, content: string) {
+  createBlogPost(title: string, content: string, coverImageUrl: string) {
     /*
         This creates a collection for the database for using with the addDoc() method.
         USE THIS --> if you don't care about ID
@@ -24,7 +24,7 @@ export class BlogpostService {
        content: content,
        publishedOn: new Date()
        slug: this.blogPostHelper.createSlug(title),
-       // cover image
+       coverImageUrl: coverImageUrl,
      }
    ); */
 
@@ -41,6 +41,7 @@ export class BlogpostService {
       content: content,
       publishedOn: new Date(),
       slug: BlogpostHelper.createSlug(title),
+      coverImageUrl: coverImageUrl,
       // cover image
     });
   }
