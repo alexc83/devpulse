@@ -4,23 +4,23 @@ An Angular-based frontend application for managing pulses, developed as part of 
 
 ## 🌟 Purpose
 
-This project serves as a practical implementation of modern frontend development principles using the Angular ecosystem and Google Firebase. It highlights the integration of Angular 21, Tailwind CSS, and Firebase to build a robust, scalable user experience.
+This project serves as a practical implementation of modern frontend development principles using the Angular ecosystem and Google Firebase. At its current stage, it focuses on building out the core workflow for creating blog posts while I work through the course.
 
 ## 🚀 Features
 
-- **Post Creation:** Comprehensive feature set for creating and managing posts.
-- **Component-Based Architecture:** Modular design with core, feature, and shared layers.
-- **Responsive UI:** Styled with Tailwind CSS for a modern, mobile-first experience.
-- **Unit Testing:** Integrated testing using the Vitest runner.
-- **Firebase Integration:** Seamless connectivity with Firebase for backend services.
+- **Post Creation Form:** Create a blog post with title and content fields.
+- **Form Validation:** Built-in validation for required fields and content limits.
+- **Markdown Preview:** Live preview while writing post content.
+- **Component-Based Architecture:** Organized into core and feature areas.
+- **Firebase Integration:** Posts are saved to Firestore.
 
 ## 🛠️ Technologies Used
 
 - **Angular 21.x**
 - **TypeScript**
-- **Tailwind CSS 4.x** (Modern utility-first CSS)
-- **Vitest** (Fast unit testing runner)
+- **Tailwind CSS 4.x**
 - **Firebase** (Backend-as-a-Service)
+- **ngx-markdown**
 
 ## 📋 Prerequisites
 
@@ -35,15 +35,18 @@ Before you begin, ensure you have the following installed:
    Create a new project in the [Firebase Console](https://console.firebase.google.com/) and add a Web App to get your configuration.
 
 2. **Application Properties:**
-   Update your Firebase configuration in the appropriate environment or configuration file (e.g., `src/app/app.config.ts` or `src/environments/environment.ts`):
+   Update your Firebase configuration in the environment files used by the app (for example, `src/environments/environment.ts` and `src/environments/environment.development.ts`):
    ```typescript
-   export const firebaseConfig = {
-     apiKey: "YOUR_API_KEY",
-     authDomain: "YOUR_AUTH_DOMAIN",
-     projectId: "YOUR_PROJECT_ID",
-     storageBucket: "YOUR_STORAGE_BUCKET",
-     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-     appId: "YOUR_APP_ID"
+   export const environment = {
+     prod: false,
+     firebase: {
+       apiKey: "YOUR_API_KEY",
+       authDomain: "YOUR_AUTH_DOMAIN",
+       projectId: "YOUR_PROJECT_ID",
+       storageBucket: "YOUR_STORAGE_BUCKET",
+       messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+       appId: "YOUR_APP_ID"
+     }
    };
    ```
 
@@ -71,12 +74,12 @@ The application will be available at `http://localhost:4200`.
 
 - `src/app`: Main application code.
   - `core`: Singleton components like the navbar.
-  - `features`: Business logic for specific features (e.g., posts).
-  - `shared`: Reusable components, pipes, and directives.
+  - `features`: Feature-specific pages and services (currently post creation).
   - `app.routes.ts`: Application routing configuration.
   - `app.config.ts`: Main application configuration and providers.
-- `public`: Static assets and the application entry point.
-- `src/styles.css`: Global styles including Tailwind CSS directives.
+- `src/environments`: Environment-based configuration, including Firebase setup.
+- `public`: Static assets such as the logo.
+- `src/styles.css`: Global styles including Tailwind CSS.
 
 ## 📖 Credits & Acknowledgements
 
