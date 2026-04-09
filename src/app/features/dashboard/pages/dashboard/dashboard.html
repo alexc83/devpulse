@@ -1,3 +1,9 @@
 <div class="max-w-7xl mx-auto px-4">
   <h1 class="text-3xl mt-8 mb-4 font-extrabold">Dashboard</h1>
+  <div class="mt-4">
+    <div class="grid grid-cols-3 gap-4">
+      <app-dashboard-statistics [value]=76 [label]="'Posts'" />
+      <app-dashboard-statistics [value]="100" [label]="'Likes'"/>
+    </div>
+  </div>
 </div>
