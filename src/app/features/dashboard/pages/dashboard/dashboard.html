@@ -2,8 +2,31 @@
   <h1 class="text-3xl mt-8 mb-4 font-extrabold">Dashboard</h1>
   <div class="mt-4">
     <div class="grid grid-cols-3 gap-4">
-      <app-dashboard-statistics [value]=76 [label]="'Posts'" />
-      <app-dashboard-statistics [value]="100" [label]="'Likes'"/>
+      <app-dashboard-statistics [value]="totalBlogPosts()" [label]="'Posts'" />
     </div>
+  </div>
+
+  <div class="mt-4">
+    <ul>
+      @for (blogPost of blogPosts() ; track blogPost.slug) {
+        <li class="grid grid-cols-5 p-4 border border-neutral-200">
+          <div class="flex flex-col col-span-4">
+            <h3 class="text-blue-500 font-bold text-xl">{{ blogPost.title }}2</h3>
+            <div class="text-neutral-900 text-sm">
+              <span>Published on: {{ blogPost.publishedOn | date }}</span>
+            </div>
+            <div>
+              {{ blogPost.content }}
+            </div>
+          </div>
+
+          <div class="col-span-1 flex items-center justify-end">
+            <a class="bg-blue-500 text-white px-4 py-2 rounded active:scale-95
+  hover:cursor-pointer" [routerLink]="['/edit-post', blogPost.slug]" >Edit</a>
+          </div>
+        </li>
+      }
+
+    </ul>
   </div>
 </div>

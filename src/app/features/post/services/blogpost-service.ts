@@ -1,6 +1,8 @@
 import { inject, Injectable } from '@angular/core';
-import { collection, doc, Firestore, setDoc } from '@angular/fire/firestore';
+import { collection, doc, Firestore, onSnapshot, setDoc } from '@angular/fire/firestore';
 import { BlogpostHelper } from '../../../core/helpers/blogpost-helper';
+import { Observable } from 'rxjs';
+import { BlogPost } from '../models/blogpost.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +35,8 @@ export class BlogpostService {
 
     // create document for use with the setDoc() method
     //  USE THIS --> when you want to add a customized ID
-    const blogPostDocumentReference = doc(this.firestore, 'blog-posts', slug);
+    const blogPostDocumentReference =
+      doc(this.firestore, 'blog-posts', slug);
 
     // setDoc -> set your own ID
     setDoc(blogPostDocumentReference, {
@@ -46,5 +49,17 @@ export class BlogpostService {
     });
   }
 
-
+  getBlogPosts(): Observable<BlogPost[]> {
+    return new Observable<BlogPost[]>(subscriber => {
+      const ref = collection(this.firestore, 'blog-posts');
+      const unsubscribe = onSnapshot(ref, snapshot => {
+        const posts = snapshot.docs.map(d => {
+          const data = d.data();
+          return { ...data, slug: d.id, publishedOn: data['publishedOn'].toDate() };
+        }) as BlogPost[];
+        subscriber.next(posts);
+      }, error => subscriber.error(error));
+      return () => unsubscribe();
+    });
+  }
 }
